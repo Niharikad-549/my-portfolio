@@ -136,12 +136,16 @@
     .service-card h3 { display: flex; align-items: center; gap: 9px; }
     .service-number { color: var(--teal); font-size: 12px; }
 
-    .projects-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
     .project-card { position: relative; min-height: 250px; display: flex; flex-direction: column; padding: 28px; transition: border-color .2s, transform .2s; }
     .project-card:hover { transform: translateY(-3px); border-color: rgba(201,168,118,.65); }
     .project-topline { display: flex; justify-content: space-between; align-items: flex-start; gap: 14px; margin-bottom: 17px; }
     .project-type { color: var(--teal); font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
-    .project-arrow { color: var(--gold); font-size: 17px; line-height: 1; }
+    .project-badge { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 6px; padding: 4px 9px; border: 1px solid rgba(126,200,216,.35); border-radius: 999px; background: rgba(126,200,216,.07); color: var(--teal); font-size: 10px; font-weight: 600; line-height: 1.4; white-space: nowrap; transition: border-color .2s, background .2s; }
+    .project-badge:hover { border-color: var(--teal); background: rgba(126,200,216,.15); }
+    .project-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+    .project-badge.code { border-color: rgba(201,168,118,.35); background: rgba(201,168,118,.07); color: var(--gold-soft); }
+    .project-badge.code:hover { border-color: var(--gold); background: rgba(201,168,118,.15); }
     .project-card h3 { margin: 0 0 10px; font: 600 23px/1.3 var(--serif); }
     .project-card > p { max-width: 470px; margin: 0 0 22px; color: var(--muted); font-size: 15px; line-height: 1.7; }
     .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; }
@@ -203,6 +207,7 @@
       .hero-grid { gap: 28px; }
       .about-grid { grid-template-columns: minmax(0,1fr) 220px; gap: 24px; }
       .skills-layout { grid-template-columns: minmax(0,1.4fr) minmax(220px,.8fr); gap: 18px; }
+      .projects-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
     }
     @media (max-width: 720px) {
       html { scroll-padding-top: 74px; }
@@ -414,25 +419,37 @@
         </div>
         <div class="projects-grid">
           <article class="project-card">
-            <div class="project-topline"><span class="project-type">Live project / eCommerce</span><a class="project-arrow" href="https://instapack.uk" target="_blank" rel="noreferrer" aria-label="Visit InstaPack.uk">&#8599;</a></div>
+            <div class="project-topline"><span class="project-type">Live project / eCommerce</span><a class="project-badge" href="https://instapack.uk" target="_blank" rel="noreferrer"><span class="project-badge-dot" aria-hidden="true"></span>Live Demo</a></div>
             <h3>InstaPack.uk</h3>
             <p>Worked on product pages, content, and frontend layouts for a WordPress eCommerce website, and fixed bugs.</p>
             <div class="tags"><span class="tag">WordPress</span><span class="tag">eCommerce</span><span class="tag">Frontend</span></div>
           </article>
           <article class="project-card">
-            <div class="project-topline"><span class="project-type">Live project / Business</span><a class="project-arrow" href="https://sushmaplastotech.com" target="_blank" rel="noreferrer" aria-label="Visit SushmaPlastotech.com">&#8599;</a></div>
+            <div class="project-topline"><span class="project-type">Live project / Business</span><a class="project-badge" href="https://sushmaplastotech.com" target="_blank" rel="noreferrer"><span class="project-badge-dot" aria-hidden="true"></span>Live Demo</a></div>
             <h3>SushmaPlastotech.com</h3>
-            <p>Website development and maintenance for a manufacturing business.</p>
-            <div class="tags"><span class="tag">WordPress</span><span class="tag">Content</span><span class="tag">Maintenance</span></div>
+            <p>Website development and maintenance for a manufacturing business, built with PHP, Bootstrap, HTML, CSS and JavaScript.</p>
+            <div class="tags"><span class="tag">PHP</span><span class="tag">Bootstrap</span><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
           </article>
           <article class="project-card">
-            <div class="project-topline"><span class="project-type">Academic project / Team of four</span><span class="project-arrow" aria-hidden="true">&#8599;</span></div>
+            <div class="project-topline"><span class="project-type">Academic project / Team of four</span><a class="project-badge code" href="#">View Code</a></div>
             <h3>College Bus Tracking System</h3>
             <p>Led a four-member team and contributed to the frontend, backend, and database for routes and schedules.</p>
             <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Python</span><span class="tag">MySQL</span></div>
           </article>
           <article class="project-card">
-            <div class="project-topline"><span class="project-type">Academic project / Full-stack</span><span class="project-arrow" aria-hidden="true">&#8599;</span></div>
+            <div class="project-topline"><span class="project-type">Internship assignment / Feedants</span><a class="project-badge code" href="#">View Code</a></div>
+            <h3>Competition Page</h3>
+            <p>Full-stack competition details screen built for the Feedants internship assignment &mdash; dynamically serves competition data and tracks registration state and remaining slots.</p>
+            <div class="tags"><span class="tag">React Native</span><span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">MongoDB</span></div>
+          </article>
+          <article class="project-card">
+            <div class="project-topline"><span class="project-type">Database project</span><a class="project-badge" href="https://mini-db.onrender.com" target="_blank" rel="noreferrer"><span class="project-badge-dot" aria-hidden="true"></span>Live Demo</a></div>
+            <h3>Mini DB</h3>
+            <p>Built a key-value database from scratch in Python, with B+ Tree indexing, an LRU cache, and a Bloom filter for fast lookups.</p>
+            <div class="tags"><span class="tag">Python</span><span class="tag">B+ Tree</span><span class="tag">LRU Cache</span><span class="tag">Bloom Filter</span></div>
+          </article>
+          <article class="project-card">
+            <div class="project-topline"><span class="project-type">Academic project / Full-stack</span><a class="project-badge code" href="#">View Code</a></div>
             <h3>Beauty Parlour Management System</h3>
             <p>A full-stack application for booking and billing.</p>
             <div class="tags"><span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">HTML</span><span class="tag">CSS</span></div>
