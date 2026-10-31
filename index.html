@@ -156,6 +156,8 @@
     .achievement-mark { width: 34px; height: 34px; display: grid; place-items: center; border: 1px solid rgba(126,200,216,.4); color: var(--teal); font-size: 14px; }
     .achievement-card h3 { margin: 26px 0 8px; font: 600 20px/1.4 var(--serif); }
     .achievement-card p { margin: 0; color: var(--muted); font-size: 13px; }
+    .achievement-card > div { flex: 1; display: flex; flex-direction: column; }
+    .achievement-card .project-badge { align-self: flex-start; margin-top: auto; }
     .achievement-status { color: var(--gold-soft) !important; }
 
     .contact-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(38px, 8vw, 100px); align-items: start; }
@@ -297,7 +299,7 @@
           <span class="availability">Available for immediate joining</span>
           <h1 class="serif" id="hero-title">Niharika <span class="name-accent">Dash</span></h1>
           <p class="hero-role">IT Professional <span aria-hidden="true">|</span> Web Development, Testing &amp; Support</p>
-          <p class="hero-intro">MCA graduate with six months of web development experience. I enjoy building thoughtful web experiences and helping teams keep their websites reliable through careful testing and support.</p>
+          <p class="hero-intro">MCA graduate with seven months of web development experience. I enjoy building thoughtful web experiences and helping teams keep their websites reliable through careful testing and support.</p>
           <div class="hero-actions">
             <a class="button" href="resume/Niharika1_0.pdf" target="_blank" rel="noopener">View Resume <span class="arrow" aria-hidden="true">&#8599;</span></a>
             <a class="button secondary" href="#about">Learn More <span class="arrow" aria-hidden="true">&#8595;</span></a>
@@ -308,7 +310,7 @@
           <div class="portrait-frame">
             <img id="portrait-image" src="image/niharika.jpg" alt="Niharika Dash">
           </div>
-          <div class="hero-note"><strong>6 months</strong><br>Web development experience</div>
+          <div class="hero-note"><strong>7 months</strong><br>Web development experience</div>
         </div>
       </div>
     </section>
@@ -323,7 +325,7 @@
         <div class="about-grid">
           <div>
             <div class="about-copy">
-              <p>I am an <strong>MCA graduate</strong> with six months of experience as a Web Developer. I have worked with <strong>HTML, CSS, JavaScript, PHP, Python, Django, MySQL, Bootstrap, and WordPress</strong>.</p>
+              <p>I am an <strong>MCA graduate</strong> with seven months of experience as a Web Developer. I have worked with <strong>HTML, CSS, JavaScript, PHP, Python, Django, MySQL, Bootstrap, and WordPress</strong>.</p>
               <p>I am interested in web development, testing, and IT support. I bring attention to detail, a thoughtful approach to solving problems, and a collaborative mindset to the work I do.</p>
             </div>
             <h3 class="values-title">My Core Values</h3>
@@ -338,8 +340,8 @@
           </div>
           <aside class="stats-panel" aria-label="Career highlights">
             <h3>At a glance</h3>
-            <div class="stat"><span class="stat-value">6+</span><span class="stat-label">Months of experience</span></div>
-            <div class="stat"><span class="stat-value">2</span><span class="stat-label">Live projects</span></div>
+            <div class="stat"><span class="stat-value">7+</span><span class="stat-label">Months of experience</span></div>
+            <div class="stat"><span class="stat-value">5</span><span class="stat-label">Live projects</span></div>
             <div class="stat"><span class="stat-value" style="font-size:22px">Ready</span><span class="stat-label">Immediate joiner</span></div>
           </aside>
         </div>
@@ -395,7 +397,7 @@
               <article class="skill-card"><h3>Database</h3><p>MySQL, SQL, Database Design</p></article>
               <article class="skill-card"><h3>WordPress</h3><p>Website Development, eCommerce, Content Management, Bug Fixing</p></article>
               <article class="skill-card"><h3>Testing &amp; IT Support</h3><p>Manual Testing, Bug Identification, Website Troubleshooting, Basic IT Support</p></article>
-              <article class="skill-card wide"><h3>Tools</h3><p>Git, VS Code, Notepad++</p></article>
+              <article class="skill-card wide"><h3>Tools</h3><p>Git, VS Code, Notepad++, Cursor, Antigravity, Claude</p></article>
             </div>
           </div>
           <div>
@@ -449,10 +451,16 @@
             <div class="tags"><span class="tag">Python</span><span class="tag">B+ Tree</span><span class="tag">LRU Cache</span><span class="tag">Bloom Filter</span></div>
           </article>
           <article class="project-card">
-            <div class="project-topline"><span class="project-type">Academic project / Full-stack</span><a class="project-badge code" href="#">View Code</a></div>
+            <div class="project-topline"><span class="project-type">Academic project / Full-stack</span><a class="project-badge" href="https://beauty-parlour-manag-nu93.bolt.host/" target="_blank" rel="noreferrer"><span class="project-badge-dot" aria-hidden="true"></span>Live Demo</a></div>
             <h3>Beauty Parlour Management System</h3>
-            <p>A full-stack application for booking and billing.</p>
+            <p>A full-stack beauty parlour management system for appointment booking, services and billing, now live online.</p>
             <div class="tags"><span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">HTML</span><span class="tag">CSS</span></div>
+          </article>
+          <article class="project-card">
+            <div class="project-topline"><span class="project-type">Assignment project / Bracket M</span><a class="project-badge" href="https://interview-task-sand.vercel.app/" target="_blank" rel="noreferrer"><span class="project-badge-dot" aria-hidden="true"></span>Live Demo</a></div>
+            <h3>Saffron Table</h3>
+            <p>A responsive restaurant web app built with React.js, HTML and CSS, with a clean, component-based UI and multi-page navigation.</p>
+            <div class="tags"><span class="tag">React</span><span class="tag">Vite</span><span class="tag">React Router</span></div>
           </article>
         </div>
       </div>
@@ -466,9 +474,9 @@
           <span class="gold-rule" aria-hidden="true"></span>
         </div>
         <div class="achievements-grid">
-          <article class="achievement-card"><span class="achievement-mark" aria-hidden="true">01</span><div><h3>Python 101 for Data Science</h3><p>IBM Cognitive Class</p></div></article>
+          <article class="achievement-card"><span class="achievement-mark" aria-hidden="true">01</span><div><h3>Python 101 for Data Science</h3><p>IBM Cognitive Class</p><a class="project-badge" href="certificates/ibmpy-certificate.pdf" target="_blank" rel="noopener noreferrer">View Certificate</a></div></article>
           <article class="achievement-card"><span class="achievement-mark" aria-hidden="true">02</span><div><h3>SQL and Relational Databases 101</h3><p>IBM Cognitive Class</p></div></article>
-          <article class="achievement-card"><span class="achievement-mark" aria-hidden="true">03</span><div><h3>Python Full-Stack Developer Course &mdash; 2025</h3></div></article>
+          <article class="achievement-card"><span class="achievement-mark" aria-hidden="true">03</span><div><h3>Python Full-Stack Developer Course &mdash; 2026</h3><a class="project-badge" href="certificates/python-full-stack.png" target="_blank" rel="noopener noreferrer">View Certificate</a></div></article>
         </div>
       </div>
     </section>
@@ -487,8 +495,8 @@
             <div class="contact-list">
               <div class="contact-item"><span class="contact-label">Email</span><a class="contact-value" href="mailto:niharikad549@gmail.com">niharikad549@gmail.com</a></div>
               <div class="contact-item"><span class="contact-label">Location</span><span class="contact-value">Vapi, Gujarat</span></div>
-              <div class="contact-item"><span class="contact-label">Instagram</span><a class="contact-value" href="https://www.instagram.com/dash__sweety/" target="_blank" rel="noreferrer">dash__sweety</a></div>
               <div class="contact-item"><span class="contact-label">LinkedIn</span><a class="contact-value" href="https://www.linkedin.com/in/dashniharika/" target="_blank" rel="noreferrer">linkedin.com/in/dashniharika</a></div>
+              <div class="contact-item"><span class="contact-label">GitHub</span><a class="contact-value" href="https://github.com/Niharikad-549" target="_blank" rel="noreferrer">github.com/Niharikad-549</a></div>
             </div>
           </div>
           <form class="contact-form" id="contact-form">
@@ -514,8 +522,8 @@
       <h2 id="resume-name" class="serif">Niharika Dash</h2>
       <p class="resume-role">IT Professional | Web Development, Testing &amp; Support</p>
       <div class="resume-contact">niharikad549@gmail.com &nbsp;|&nbsp; Vapi, Gujarat</div>
-      <section class="resume-section"><h3>Professional Summary</h3><p>MCA graduate with six months of experience as a Web Developer. Skills include HTML, CSS, JavaScript, PHP, Python, Django, MySQL, Bootstrap, and WordPress. Interested in web development, testing, and IT support. Available for immediate joining.</p></section>
-      <section class="resume-section"><h3>Experience</h3><p>Web Developer &mdash; 6 months of experience. Work included WordPress website development and maintenance, product pages, content, frontend layouts, and bug fixing.</p></section>
+      <section class="resume-section"><h3>Professional Summary</h3><p>MCA graduate with seven months of experience as a Web Developer. Skills include HTML, CSS, JavaScript, PHP, Python, Django, MySQL, Bootstrap, and WordPress. Interested in web development, testing, and IT support. Available for immediate joining.</p></section>
+      <section class="resume-section"><h3>Experience</h3><p>Web Developer &mdash; 7 months of experience. Work included WordPress website development and maintenance, product pages, content, frontend layouts, and bug fixing.</p></section>
       <section class="resume-section"><h3>Education</h3><ul><li>10th (Secondary), S.G. High School, Kapilaprasad Barapada, Jajpur, Odisha (Odisha Board), 2016</li><li>12th (Higher Secondary), B.S.H.S High School, Sayedpur, Jajpur, Odisha (Odisha Board), 2016&ndash;2018</li><li>B.Sc. Computer Science, KBS Commerce &amp; Natraj Professional Science College, VNSGU, Gujarat (2018&ndash;2022)</li><li>MCA, Institute of Technical Education &amp; Research, SOA University, Bhubaneswar (2022&ndash;2024)</li></ul></section>
       <section class="resume-section"><h3>Projects</h3><ul><li>InstaPack.uk &mdash; WordPress eCommerce website</li><li>SushmaPlastotech.com &mdash; business website development and maintenance</li><li>College Bus Tracking System &mdash; academic project; led a four-member team</li><li>Beauty Parlour Management System &mdash; academic full-stack booking and billing app</li></ul></section>
       <section class="resume-section"><h3>Technical Skills</h3><p>Python, JavaScript (ES6), PHP, SQL, HTML5, CSS3, Bootstrap, Django, MySQL, Database Design, WordPress, Manual Testing, Website Troubleshooting, Git, VS Code, Notepad++.</p></section>
