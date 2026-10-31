@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#121212">
+  <meta name="description" content="Projects by Niharika Dash.">
+  <title>Projects | Niharika Dash</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      --ink: #f5f3ee;
+      --muted: #aaa9a4;
+      --subtle: #747671;
+      --bg: #121212;
+      --surface: #1a1b1a;
+      --card: #20211f;
+      --line: #343633;
+      --gold: #c9a876;
+      --gold-soft: #e3c99e;
+      --teal: #7ec8d8;
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "Inter", "Segoe UI", sans-serif;
+      --content: 1160px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 92px; }
+    body {
+      margin: 0;
+      background-color: var(--bg);
+      background-image: radial-gradient(ellipse at 76% 9%, rgba(126, 200, 216, .055), transparent 30%), repeating-linear-gradient(135deg, rgba(255,255,255,.012) 0, rgba(255,255,255,.012) 1px, transparent 1px, transparent 8px);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button:focus-visible, a:focus-visible { outline: 2px solid var(--teal); outline-offset: 4px; }
+    ::selection { color: #111; background: var(--gold); }
+    .container { width: min(var(--content), calc(100% - 56px)); margin-inline: auto; }
+    .section { padding: 120px 0; border-top: 1px solid rgba(255,255,255,.06); }
+    .section-heading { max-width: 720px; margin-bottom: 56px; }
+    .section-heading h2 { margin: 14px 0 18px; font: 600 clamp(40px, 4vw, 49px)/1.15 var(--serif); letter-spacing: 0; }
+    .section-heading h2 span { color: var(--gold); }
+    .gold-rule { display: block; width: 46px; height: 2px; margin-top: 24px; background: var(--gold); }
+    .back-link { display: inline-flex; color: var(--teal); font-size: 13px; font-weight: 600; }
+    .back-link:hover { color: var(--gold-soft); }
+
+    .site-header { position: fixed; z-index: 20; inset: 0 0 auto; border-bottom: 1px solid rgba(255,255,255,.08); background: rgba(18,18,18,.91); backdrop-filter: blur(16px); }
+    .nav-wrap { height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 26px; }
+    .brand { flex: 0 0 auto; padding: 5px 10px; border: 1px solid var(--gold); color: var(--ink); font: 600 17px/1.4 var(--serif); }
+    .brand span { color: var(--gold); }
+    .nav-links { display: flex; align-items: center; justify-content: center; gap: clamp(15px, 2vw, 28px); margin: 0; padding: 0; list-style: none; }
+    .nav-links a { color: #c4c3be; font-size: 12px; font-weight: 600; transition: color .2s ease; }
+    .nav-links a:hover, .nav-links a[aria-current="page"] { color: var(--gold-soft); }
+    .nav-resume { flex: 0 0 auto; padding: 8px 14px; border: 1px solid var(--line); color: var(--gold-soft); font-size: 12px; font-weight: 700; transition: border-color .2s, background .2s; }
+    .nav-resume:hover { border-color: var(--gold); background: rgba(201,168,118,.08); }
+    .menu-toggle { display: none; width: 40px; height: 40px; border: 1px solid var(--line); background: transparent; color: var(--ink); cursor: pointer; }
+
+    .project-card { border: 1px solid var(--line); background: linear-gradient(145deg, rgba(42,43,40,.82), rgba(30,31,29,.9)); }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+    .project-card { position: relative; min-height: 250px; display: flex; flex-direction: column; padding: 28px; transition: border-color .2s, transform .2s; }
+    .project-card:hover { transform: translateY(-3px); border-color: rgba(201,168,118,.65); }
+    .project-topline { display: flex; justify-content: space-between; align-items: flex-start; gap: 14px; margin-bottom: 17px; }
+    .project-type { color: var(--teal); font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    .project-badge { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 6px; padding: 4px 9px; border: 1px solid rgba(126,200,216,.35); border-radius: 999px; background: rgba(126,200,216,.07); color: var(--teal); font-size: 10px; font-weight: 600; line-height: 1.4; white-space: nowrap; transition: border-color .2s, background .2s; }
+    .project-badge:hover { border-color: var(--teal); background: rgba(126,200,216,.15); }
+    .project-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+    .project-badge.code { border-color: rgba(201,168,118,.35); background: rgba(201,168,118,.07); color: var(--gold-soft); }
+    .project-badge.code:hover { border-color: var(--gold); background: rgba(201,168,118,.15); }
+    .project-card h3 { margin: 0 0 10px; font: 600 23px/1.3 var(--serif); }
+    .project-card > p { max-width: 470px; margin: 0 0 22px; color: var(--muted); font-size: 15px; line-height: 1.7; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; }
+    .tag { padding: 5px 9px; border: 1px solid rgba(201,168,118,.3); color: var(--gold-soft); font-size: 11px; line-height: 1.45; }
+
+    .site-footer { padding: 26px 0; border-top: 1px solid rgba(255,255,255,.08); color: var(--subtle); font-size: 12px; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 15px; }
+    .footer-inner strong { color: var(--gold-soft); font-weight: 600; }
+
+    @media (max-width: 900px) {
+      .nav-wrap { gap: 14px; }
+      .nav-links { gap: 13px; }
+      .nav-links a { font-size: 11px; }
+      .projects-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    }
+    @media (max-width: 720px) {
+      html { scroll-padding-top: 74px; }
+      .container { width: min(100% - 36px, var(--content)); }
+      .section { padding: 88px 0; }
+      .section-heading { margin-bottom: 40px; }
+      .nav-wrap { height: 66px; }
+      .menu-toggle { display: inline-grid; place-items: center; margin-left: auto; }
+      .nav-resume { padding: 7px 10px; }
+      .nav-links { position: absolute; top: 65px; right: 18px; left: 18px; display: none; align-items: stretch; gap: 0; padding: 8px 14px; border: 1px solid var(--line); background: #191a19; box-shadow: 0 18px 36px rgba(0,0,0,.4); }
+      .nav-links.is-open { display: grid; }
+      .nav-links li + li { border-top: 1px solid rgba(255,255,255,.06); }
+      .nav-links a { display: block; padding: 10px 3px; font-size: 12px; }
+    }
+    @media (max-width: 480px) {
+      .container { width: calc(100% - 32px); }
+      .section-heading h2 { font-size: 37px; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .project-card { min-height: 225px; padding: 22px; }
+      .footer-inner { flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="container nav-wrap" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="Niharika, home">Niharika<span>.</span></a>
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-navigation"><span aria-hidden="true">&#9776;</span></button>
+      <ul class="nav-links" id="site-navigation">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#education">Education</a></li>
+        <li><a href="index.html#skills">Skills</a></li>
+        <li><a href="projects.html" aria-current="page">Projects</a></li>
+        <li><a href="index.html#achievements">Achievements</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <a class="nav-resume" href="resume/Niharika_1_1.pdf" target="_blank" rel="noopener">Resume <span aria-hidden="true">&#8599;</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="section-heading">
+          <a class="back-link" href="index.html#projects">&larr; Back to Portfolio</a>
+          <h2 id="projects-title">Projects</h2>
+          <span class="gold-rule" aria-hidden="true"></span>
+        </div>
+        <!-- Add new project cards here -->
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="project-topline"><span class="project-type">Live project / eCommerce</span><a class="project-badge" href="https://instapack.uk" target="_blank" rel="noreferrer"><span class="project-badge-dot" aria-hidden="true"></span>Live Demo</a></div>
+            <h3>InstaPack.uk</h3>
+            <p>Worked on product pages, content, and frontend layouts for a WordPress eCommerce website, and fixed bugs.</p>
+            <div class="tags"><span class="tag">WordPress</span><span class="tag">eCommerce</span><span class="tag">Frontend</span></div>
+          </article>
+          <article class="project-card">
+            <div class="project-topline"><span class="project-type">Live project / Business</span><a class="project-badge" href="https://sushmaplastotech.com" target="_blank" rel="noreferrer"><span class="project-badge-dot" aria-hidden="true"></span>Live Demo</a></div>
+            <h3>SushmaPlastotech.com</h3>
+            <p>Website development and maintenance for a manufacturing business, built with PHP, Bootstrap, HTML, CSS and JavaScript.</p>
+            <div class="tags"><span class="tag">PHP</span><span class="tag">Bootstrap</span><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+          </article>
+          <article class="project-card">
+            <div class="project-topline"><span class="project-type">Academic project / Team of four</span><a class="project-badge" href="https://college-bus-tracking-w6l3.onrender.com" target="_blank" rel="noreferrer"><span class="project-badge-dot" aria-hidden="true"></span>Live Demo</a></div>
+            <h3>College Bus Tracking System</h3>
+            <p>Led a four-member team and contributed to the frontend, backend, and database for routes and schedules.</p>
+            <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Python</span><span class="tag">MySQL</span></div>
+          </article>
+          <article class="project-card">
+            <div class="project-topline"><span class="project-type">Internship assignment / Feedants</span><a class="project-badge code" href="https://github.com/Niharikad-549/-competition-page" target="_blank" rel="noreferrer">View Code</a></div>
+            <h3>Competition Page</h3>
+            <p>Full-stack competition details screen built for the Feedants internship assignment &mdash; dynamically serves competition data and tracks registration state and remaining slots.</p>
+            <div class="tags"><span class="tag">React Native</span><span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">MongoDB</span></div>
+          </article>
+          <article class="project-card">
+            <div class="project-topline"><span class="project-type">Database project</span><a class="project-badge" href="https://mini-db.onrender.com" target="_blank" rel="noreferrer"><span class="project-badge-dot" aria-hidden="true"></span>Live Demo</a></div>
+            <h3>Mini DB</h3>
+            <p>Built a key-value database from scratch in Python, with B+ Tree indexing, an LRU cache, and a Bloom filter for fast lookups.</p>
+            <div class="tags"><span class="tag">Python</span><span class="tag">B+ Tree</span><span class="tag">LRU Cache</span><span class="tag">Bloom Filter</span></div>
+          </article>
+          <article class="project-card">
+            <div class="project-topline"><span class="project-type">Academic project / Full-stack</span><a class="project-badge" href="https://beauty-parlour-manag-nu93.bolt.host/" target="_blank" rel="noreferrer"><span class="project-badge-dot" aria-hidden="true"></span>Live Demo</a></div>
+            <h3>Beauty Parlour Management System</h3>
+            <p>A full-stack beauty parlour management system for appointment booking, services and billing, now live online.</p>
+            <div class="tags"><span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">HTML</span><span class="tag">CSS</span></div>
+          </article>
+          <article class="project-card">
+            <div class="project-topline"><span class="project-type">Assignment project / Bracket M</span><a class="project-badge" href="https://interview-task-sand.vercel.app/" target="_blank" rel="noreferrer"><span class="project-badge-dot" aria-hidden="true"></span>Live Demo</a></div>
+            <h3>Saffron Table</h3>
+            <p>A responsive restaurant web app built with React.js, HTML and CSS, with a clean, component-based UI and multi-page navigation.</p>
+            <div class="tags"><span class="tag">React</span><span class="tag">Vite</span><span class="tag">React Router</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner"><span>&copy; <span id="current-year"></span> <strong>Niharika Dash</strong></span><a href="#projects">Back to top &#8593;</a></div>
+  </footer>
+
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navigation = document.querySelector('.nav-links');
+    menuToggle.addEventListener('click', () => {
+      const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', String(!isOpen));
+      menuToggle.setAttribute('aria-label', isOpen ? 'Open navigation' : 'Close navigation');
+      navigation.classList.toggle('is-open', !isOpen);
+    });
+
+    navigation.addEventListener('click', (event) => {
+      if (event.target.closest('a')) {
+        navigation.classList.remove('is-open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Open navigation');
+      }
+    });
+
+    document.querySelector('#current-year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

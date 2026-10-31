@@ -150,6 +150,10 @@
     .project-card > p { max-width: 470px; margin: 0 0 22px; color: var(--muted); font-size: 15px; line-height: 1.7; }
     .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; }
     .tag { padding: 5px 9px; border: 1px solid rgba(201,168,118,.3); color: var(--gold-soft); font-size: 11px; line-height: 1.45; }
+    .project-more { align-items: center; justify-content: center; text-align: center; }
+    .project-more-plus { color: var(--gold); font: 600 64px/1 var(--serif); }
+    .project-more-label { margin-top: 4px; font: 600 23px/1.3 var(--serif); }
+    .project-more-note { margin-top: 6px; color: var(--muted); font-size: 13px; }
 
     .achievements-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; }
     .achievement-card { min-height: 190px; display: flex; flex-direction: column; justify-content: space-between; padding: 24px; }
@@ -433,22 +437,10 @@
             <div class="tags"><span class="tag">PHP</span><span class="tag">Bootstrap</span><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
           </article>
           <article class="project-card">
-            <div class="project-topline"><span class="project-type">Academic project / Team of four</span><a class="project-badge" href="https://college-bus-tracking-w6l3.onrender.com" target="_blank" rel="noreferrer"><span class="project-badge-dot" aria-hidden="true"></span>Live Demo</a></div>
-            <h3>College Bus Tracking System</h3>
-            <p>Led a four-member team and contributed to the frontend, backend, and database for routes and schedules.</p>
-            <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Python</span><span class="tag">MySQL</span></div>
-          </article>
-          <article class="project-card">
-            <div class="project-topline"><span class="project-type">Internship assignment / Feedants</span><a class="project-badge code" href="https://github.com/Niharikad-549/-competition-page" target="_blank" rel="noreferrer">View Code</a></div>
-            <h3>Competition Page</h3>
-            <p>Full-stack competition details screen built for the Feedants internship assignment &mdash; dynamically serves competition data and tracks registration state and remaining slots.</p>
-            <div class="tags"><span class="tag">React Native</span><span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">MongoDB</span></div>
-          </article>
-          <article class="project-card">
-            <div class="project-topline"><span class="project-type">Database project</span><a class="project-badge" href="https://mini-db.onrender.com" target="_blank" rel="noreferrer"><span class="project-badge-dot" aria-hidden="true"></span>Live Demo</a></div>
-            <h3>Mini DB</h3>
-            <p>Built a key-value database from scratch in Python, with B+ Tree indexing, an LRU cache, and a Bloom filter for fast lookups.</p>
-            <div class="tags"><span class="tag">Python</span><span class="tag">B+ Tree</span><span class="tag">LRU Cache</span><span class="tag">Bloom Filter</span></div>
+            <div class="project-topline"><span class="project-type">Assignment project / Bracket M</span><a class="project-badge" href="https://interview-task-sand.vercel.app/" target="_blank" rel="noreferrer"><span class="project-badge-dot" aria-hidden="true"></span>Live Demo</a></div>
+            <h3>Saffron Table</h3>
+            <p>A responsive restaurant web app built with React.js, HTML and CSS, with a clean, component-based UI and multi-page navigation.</p>
+            <div class="tags"><span class="tag">React</span><span class="tag">Vite</span><span class="tag">React Router</span></div>
           </article>
           <article class="project-card">
             <div class="project-topline"><span class="project-type">Academic project / Full-stack</span><a class="project-badge" href="https://beauty-parlour-manag-nu93.bolt.host/" target="_blank" rel="noreferrer"><span class="project-badge-dot" aria-hidden="true"></span>Live Demo</a></div>
@@ -457,11 +449,16 @@
             <div class="tags"><span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">HTML</span><span class="tag">CSS</span></div>
           </article>
           <article class="project-card">
-            <div class="project-topline"><span class="project-type">Assignment project / Bracket M</span><a class="project-badge" href="https://interview-task-sand.vercel.app/" target="_blank" rel="noreferrer"><span class="project-badge-dot" aria-hidden="true"></span>Live Demo</a></div>
-            <h3>Saffron Table</h3>
-            <p>A responsive restaurant web app built with React.js, HTML and CSS, with a clean, component-based UI and multi-page navigation.</p>
-            <div class="tags"><span class="tag">React</span><span class="tag">Vite</span><span class="tag">React Router</span></div>
+            <div class="project-topline"><span class="project-type">Academic project / Team of four</span><a class="project-badge" href="https://college-bus-tracking-w6l3.onrender.com" target="_blank" rel="noreferrer"><span class="project-badge-dot" aria-hidden="true"></span>Live Demo</a></div>
+            <h3>College Bus Tracking System</h3>
+            <p>Led a four-member team and contributed to the frontend, backend, and database for routes and schedules.</p>
+            <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Python</span><span class="tag">MySQL</span></div>
           </article>
+          <a class="project-card project-more" href="projects.html">
+            <span class="project-more-plus" aria-hidden="true">+</span>
+            <span class="project-more-label">View more</span>
+            <span class="project-more-note">More projects, more experiments</span>
+          </a>
         </div>
       </div>
     </section>
